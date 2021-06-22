@@ -1,0 +1,8 @@
+version: "3" # Docker-compose version
+services: # 멀티 컨테이너 환경으로 묶을 이미지를 명시
+  redis-service: # 생성될 컨테이너의 이름
+    image: "redis" # 컨테이너 생성에 사용될 이미지
+  compose-app:
+    build: . # 이미지로 빌드시 필요한 Dockerfile이 있는 경로
+    ports: # 포트 매핑
+      - "8080:8080"
