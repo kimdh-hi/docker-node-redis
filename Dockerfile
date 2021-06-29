@@ -1,9 +1,11 @@
 FROM node:10
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY ./ ./
+COPY ./package.json ./
 
 RUN npm install
 
-CMD ["node", "index.js"]
+COPY ./ ./
+
+CMD ["nodemon", "index.js"]

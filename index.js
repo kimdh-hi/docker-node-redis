@@ -18,7 +18,7 @@ client.set("num", 0);
 app.get("/", (req, res) => {
   client.get("num", (err, number) => {
     // redis로부터 key값을 num으로 하는 값을 get
-    res.send("Incresed number from redis : " + number); // redis로 부터 get한 값을 그대로 브라우저에 응답
+    res.send("Test Incresed number from redis : " + number); // redis로 부터 get한 값을 그대로 브라우저에 응답
     client.set("num", parseInt(number) + 1); // num을 key값으로 하는 value에 +1 만큼 증가시켜서 set(저장)
   });
 });
